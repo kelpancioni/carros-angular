@@ -1,0 +1,31 @@
+<!--<div class="container-fluid wrapper">-->
+<!--  <form [formGroup]="form">-->
+<!--    <div class="row col-6 form-group">-->
+<!--      <label for="username">Usuário</label>-->
+<!--      <input formControlName="username" id="username" class="form-control">-->
+<!--    </div>-->
+<!--    <div class="row col-6 form-group">-->
+<!--      <label for="password">Senha</label>-->
+<!--      <input formControlName="password" id="password" class="form-control" type="password">-->
+<!--    </div>-->
+<!--    <button class="btn btn-default" (click)="signIn()">Entrar</button>-->
+<!--  </form>-->
+<!--</div>-->
+
+<div class="container text-center">
+  <form class="form-signin" [formGroup]="form">
+    <img class="mb-4" src="/assets/angular_icon.png" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal">Login</h1>
+    <label for="username" class="sr-only">Usuário</label>
+    <input type="text" formControlName="username" id="username" class="form-control" placeholder="Usuário" required autofocus>
+    <label for="password" class="sr-only">Senha</label>
+    <input type="password" formControlName="password" id="password" class="form-control" placeholder="Senha" required>
+<!--    <div class="checkbox mb-3">-->
+<!--      <label>-->
+<!--        <input type="checkbox" value="remember-me"> Remember me-->
+<!--      </label>-->
+<!--    </div>-->
+    <button class="btn btn-lg btn-primary btn-block" (click)="signIn()">Entrar</button>
+    <p class="mt-5 mb-3 text-muted">&copy; 2021 - Kelsey Pancioni</p>
+  </form>
+</div>
