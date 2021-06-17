@@ -1,0 +1,24 @@
+<!--<nav aria-label="breadcrumb" class="col-lg-10 col-md-9 mt-1 d-inline-flex">-->
+<!--  <ol class="breadcrumb">-->
+<!--    <li class="breadcrumb-item"><a href="#">Home</a></li>-->
+<!--    <li class="breadcrumb-item active" aria-current="page">Library</li>-->
+<!--  </ol>-->
+<!--</nav>-->
+<div class="container-fluid col-lg-10 col-md-9" [class.d-md-inline-flex]="this.isAdmin" [class.d-block]="!isAdmin">
+  <p-breadcrumb *ngIf="isAdmin" class="col-lg-10 col-md-9" [model]="items" [home]="home"></p-breadcrumb>
+  <div class="row position-absolute mr-1 mt-3">
+    <div class="col-sm-6 col-md-4 my-3" *ngFor="let car of cars">
+      <div class="card" (click)="carDetails(car)" style="cursor: pointer">
+        <img [src]="car.urlFoto" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">{{car.nome}}</h5>
+<!--          <p class="card-text">{{car.descricao}}</p>-->
+<!--          <a href="#" class="btn btn-primary">Go somewhere</a>-->
+        </div>
+      </div>
+    </div>
+  </div>
+<!--  <div class="card col" *ngFor="let car of cars">-->
+<!--    {{car.nome}}-->
+<!--  </div>-->
+</div>

@@ -15,6 +15,16 @@ import { HttpClientModule } from "@angular/common/http";
 import {ModalModule} from "ngx-bootstrap/modal";
 import {TooltipModule} from "ngx-bootstrap/tooltip";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { CarsComponent } from './pages/cars/cars.component';
+import { UsersComponent } from './pages/users/users.component';
+import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
+
+import {BreadcrumbModule} from 'primeng/breadcrumb';
+import { ModalCarDetailsComponent } from './modals/modal-car-details/modal-car-details.component';
+import { NgpImagePickerModule } from 'ngp-image-picker';
+import { AddCarPhotoComponent } from './modals/add-car-photo/add-car-photo.component';
 
 
 @NgModule({
@@ -22,7 +32,12 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     AppComponent,
     HomeComponent,
     LoginComponent,
-    NavbarComponent
+    NavbarComponent,
+    SidebarComponent,
+    CarsComponent,
+    UsersComponent,
+    ModalCarDetailsComponent,
+    AddCarPhotoComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +49,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     TooltipModule.forRoot(),
     ModalModule.forRoot(),
     BsDropdownModule.forRoot(),
-    FontAwesomeModule
+    ProgressbarModule.forRoot(),
+    FontAwesomeModule,
+    BreadcrumbModule,
+    ButtonsModule.forRoot(),
+    NgpImagePickerModule,
   ],
   providers: [
     AuthService,

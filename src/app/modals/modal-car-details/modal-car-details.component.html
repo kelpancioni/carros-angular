@@ -1,0 +1,47 @@
+<div class="modal-header">
+  <h4 class="modal-title pull-left">{{isAdmin ? 'Editar - ' : ''}}{{car.nome}}</h4>
+  <button type="button" class="close pull-right" aria-label="Close" (click)="close()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="form">
+    <div class="row justify-content-center">
+      <div class="col-xs-12 mb-3">
+        <img [src]="car.urlFoto || null" (click)="isAdmin ? openImgUpload() : ''" style="cursor: pointer">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Nome</label>
+          <input type="text" formControlName="name" class="form-control">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Tipo</label>
+          <div class="btn-group d-block" [class.disabled-group]="!isAdmin" btnRadioGroup formControlName="type">
+            <label btnRadio="classicos" class="btn btn-primary">Clássicos</label>
+            <label btnRadio="esportivos" class="btn btn-primary">Esportivos</label>
+            <label btnRadio="luxo" class="btn btn-primary">Luxo</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label>Descrição</label>
+          <textarea formControlName="description" class="form-control"></textarea>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" (click)="close()">Fechar</button>
+  <button type="button" class="btn btn-success" *ngIf="isAdmin" (click)="save()">Salvar</button>
+</div>

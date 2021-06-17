@@ -9,6 +9,9 @@ import {Router} from "@angular/router";
 })
 export class HomeComponent implements OnInit {
 
+  username: string = ''
+  userPhoto: string = ''
+
   constructor(
     private authService: AuthService,
     private router: Router
@@ -20,6 +23,8 @@ export class HomeComponent implements OnInit {
         this.router.navigate(['/'])
       }
     })
+    this.username = this.authService.loggedUser.nome
+    this.userPhoto = this.authService.loggedUser.urlFoto
   }
 
 }

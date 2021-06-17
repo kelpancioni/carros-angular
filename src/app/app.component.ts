@@ -10,13 +10,20 @@ export class AppComponent implements OnInit{
   title = 'carros-angular';
 
   showNav = false
+  showSidebar = false
 
   constructor(private authService: AuthService) {
   }
 
   ngOnInit() {
     this.authService.showNavbarEmitter.subscribe(res => {
-      this.showNav = res;
+      if (res) {
+        this.showNav = res;
+        this.showSidebar = res.isAdmin();
+      } else {
+        this.showNav = res;
+        this.showSidebar = res;
+      }
     })
   }
 }

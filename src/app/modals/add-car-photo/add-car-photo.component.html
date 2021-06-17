@@ -1,0 +1,21 @@
+<div class="modal-header">
+  <h4 class="modal-title pull-left">Editar foto</h4>
+  <button type="button" class="close pull-right" aria-label="Close" (click)="close()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="row justify-content-center">
+    <div class="col-xs-12 mb-3">
+      <ngp-image-picker
+        [_config]="{hideEditBtn: true}"
+        ($imageChanged)="setBase64($event)"
+      >
+      </ngp-image-picker>
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" (click)="close()">Fechar</button>
+  <button type="button" class="btn btn-success" (click)="confirm()">Confirmar</button>
+</div>

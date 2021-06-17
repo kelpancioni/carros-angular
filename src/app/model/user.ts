@@ -26,4 +26,8 @@ export class User {
     return this.roles.includes('ROLE_ADMIN')
   }
 
+  isUser() {
+    return this.roles.includes('ROLE_USER') && !this.roles.includes('ROLE_ADMIN')
+  }
+
 }
