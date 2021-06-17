@@ -4,9 +4,6 @@ import {Car} from "../../model/car";
 import {AbstractControl, FormBuilder, Validators} from "@angular/forms";
 import {CarsService} from "../../services/cars.service";
 import {AddCarPhotoComponent} from "../add-car-photo/add-car-photo.component";
-import {UploadService} from "../../services/upload.service";
-import {map, switchMap} from "rxjs/operators";
-import {of} from "rxjs";
 
 @Component({
   selector: 'app-modal-car-details',
@@ -32,7 +29,6 @@ export class ModalCarDetailsComponent implements OnInit {
     private bsModalRef: BsModalRef,
     private formBuilder: FormBuilder,
     private carsService: CarsService,
-    private uploadService: UploadService
     ) {
     this.form = this.formBuilder.group({
       'name': ['', Validators.required],
